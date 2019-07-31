@@ -11,23 +11,21 @@ echo -e "${GREEN}Setting core pipeline environment${NC}"
 
 #echo "Setting core software environment"
 
-if [[ $USER != 'root' ]]; then
-    if [[ $PLATFORM == "Linux" ]]; then
-        echo -e "${GREEN}Current OS is $PLATFORM ${NC}"
-        N_SOFTWARE_ROOT=/home/arjun/nirvana/software
-        N_PROJECT_ROOT=/home/arjun/nirvana/projects
-    fi
-    # Sourcing additional data
-    source $N_SOFTWARE_ROOT/rez/completion/complete.sh
-
-    # # Setting up environment
-    export PATH=$PATH:$N_SOFTWARE_ROOT/rez/bin/rez:$N_SOFTWARE_ROOT/suites/current/bin
-    export DEBUG=0;
-
-    # export REZ_CONFIG_FILE=$N_SOFTWARE_ROOT/config/rezconfig.py
-    # export REZ_PACKAGES_PATH=$REZ_PACKAGES_PATH:$N_SOFTWARE_ROOT/internal:$N_SOFTWARE_ROOT/external
-
-    # export PATH=$PATH:/Applications/CMake\ 2.8-12.app/Contents/bin/
-    # export PATH=$PATH:/Users/arjun/sw/bin/rez
-    # source /Users/arjun/sw/completion/complete.sh
+if [[ $PLATFORM == "Linux" ]]; then
+    echo -e "${GREEN}Current OS is $PLATFORM ${NC}"
+    N_SOFTWARE_ROOT=/home/arjun/nirvana/software
+    N_PROJECT_ROOT=/home/arjun/nirvana/projects
 fi
+# Sourcing additional data
+source $N_SOFTWARE_ROOT/rez/completion/complete.sh
+
+# # Setting up environment
+export PATH=$PATH:$N_SOFTWARE_ROOT/rez/bin/rez:$N_SOFTWARE_ROOT/suites/current/bin
+export DEBUG=0;
+
+# export REZ_CONFIG_FILE=$N_SOFTWARE_ROOT/config/rezconfig.py
+# export REZ_PACKAGES_PATH=$REZ_PACKAGES_PATH:$N_SOFTWARE_ROOT/internal:$N_SOFTWARE_ROOT/external
+
+# export PATH=$PATH:/Applications/CMake\ 2.8-12.app/Contents/bin/
+# export PATH=$PATH:/Users/arjun/sw/bin/rez
+# source /Users/arjun/sw/completion/complete.sh
