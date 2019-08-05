@@ -16,6 +16,11 @@ if [[ $PLATFORM == "Linux" ]]; then
     N_SOFTWARE_ROOT=/home/arjun/nirvana/software
     N_PROJECT_ROOT=/home/arjun/nirvana/projects
 fi
+if [[ $PLATFORM == "Darwin" ]]; then
+    echo -e "${GREEN}Current OS is $PLATFORM ${NC}"
+    N_SOFTWARE_ROOT=/Users/arjun/nirvana/software
+    N_PROJECT_ROOT=/Users/arjun/nirvana/projects
+fi
 # Sourcing additional data
 source $N_SOFTWARE_ROOT/rez/completion/complete.sh
 
